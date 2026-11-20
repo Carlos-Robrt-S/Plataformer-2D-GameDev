@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://ykkxxul4otx1"]
+
+[ext_resource type="Script" uid="uid://bbtbh7nfjepir" path="res://Scripts/jogador.gd" id="1_wynnb"]
+[ext_resource type="Texture2D" uid="uid://cq8hhhgue5slx" path="res://Assets/characters/2 Punk/Punk_run.png" id="2_1romf"]
+[ext_resource type="Texture2D" uid="uid://cymuo62bcvhp6" path="res://Assets/characters/2 Punk/Punk_idle.png" id="3_em14g"]
+[ext_resource type="Texture2D" uid="uid://ckr1d641bht0f" path="res://Assets/characters/2 Punk/Punk_jump.png" id="4_y6kko"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ktxv1"]
+size = Vector2(23, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xse76"]
+atlas = ExtResource("2_1romf")
+region = Rect2(0, 15, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tw2ln"]
+atlas = ExtResource("2_1romf")
+region = Rect2(32, 15, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_grcb1"]
+atlas = ExtResource("2_1romf")
+region = Rect2(64, 15, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sw5t"]
+atlas = ExtResource("2_1romf")
+region = Rect2(96, 15, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e414t"]
+atlas = ExtResource("2_1romf")
+region = Rect2(128, 15, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j88hc"]
+atlas = ExtResource("2_1romf")
+region = Rect2(160, 15, 32, 33)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr72v"]
+atlas = ExtResource("3_em14g")
+region = Rect2(0, 14, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt7md"]
+atlas = ExtResource("3_em14g")
+region = Rect2(32, 14, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_koq0r"]
+atlas = ExtResource("3_em14g")
+region = Rect2(64, 14, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m0oq"]
+atlas = ExtResource("3_em14g")
+region = Rect2(96, 14, 32, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjgie"]
+atlas = ExtResource("4_y6kko")
+region = Rect2(0, 9, 31, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pyh6"]
+atlas = ExtResource("4_y6kko")
+region = Rect2(48, 9, 31, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njr4q"]
+atlas = ExtResource("4_y6kko")
+region = Rect2(96, 9, 31, 39)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlom6"]
+atlas = ExtResource("4_y6kko")
+region = Rect2(144, 9, 31, 39)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktxv1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xse76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tw2ln")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_grcb1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sw5t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e414t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j88hc")
+}],
+"loop": 1,
+"name": &"correr",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr72v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt7md")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_koq0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m0oq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjgie")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pyh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njr4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlom6")
+}],
+"loop": 1,
+"name": &"pular",
+"speed": 8.0
+}]
+
+[node name="Jogador" type="CharacterBody2D" unique_id=468557487]
+collision_layer = 2
+script = ExtResource("1_wynnb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065832554]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_ktxv1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664493221]
+sprite_frames = SubResource("SpriteFrames_ktxv1")
+animation = &"idle"
+autoplay = "idle"
