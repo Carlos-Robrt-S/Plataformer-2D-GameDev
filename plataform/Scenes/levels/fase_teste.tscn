@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://olep2w5vbsca"]
 
 [ext_resource type="Script" uid="uid://dr4rifl6181pl" path="res://Scripts/fase_teste.gd" id="1_pjqgh"]
+[ext_resource type="PackedScene" uid="uid://ykkxxul4otx1" path="res://Scenes/jogador.tscn" id="2_lulig"]
 [ext_resource type="Texture2D" uid="uid://dv2shou7neydv" path="res://Assets/atlas/1 Tiles/IndustrialTile_05.png" id="2_qgxeg"]
 [ext_resource type="Texture2D" uid="uid://dw80pl742m7qd" path="res://Assets/atlas/1 Tiles/IndustrialTile_13.png" id="3_lulig"]
 [ext_resource type="Texture2D" uid="uid://synmtyxs5smc" path="res://Assets/atlas/1 Tiles/IndustrialTile_15.png" id="4_0wd0p"]
@@ -104,3 +105,6 @@ position = Vector2(0, 704)
 
 [node name="Player" parent="." unique_id=513318737 instance=ExtResource("11_v6ol2")]
 position = Vector2(38, 564)
+
+[node name="Jogador" parent="." unique_id=468557487 instance=ExtResource("2_lulig")]
+position = Vector2(58, 584)

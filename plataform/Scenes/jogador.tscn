@@ -3,7 +3,8 @@
 [ext_resource type="Script" uid="uid://bbtbh7nfjepir" path="res://Scripts/jogador.gd" id="1_wynnb"]
 [ext_resource type="Texture2D" uid="uid://cq8hhhgue5slx" path="res://Assets/characters/2 Punk/Punk_run.png" id="2_1romf"]
 [ext_resource type="Texture2D" uid="uid://cymuo62bcvhp6" path="res://Assets/characters/2 Punk/Punk_idle.png" id="3_em14g"]
-[ext_resource type="Texture2D" uid="uid://ckr1d641bht0f" path="res://Assets/characters/2 Punk/Punk_jump.png" id="4_y6kko"]
+[ext_resource type="Texture2D" uid="uid://cwvxo48wekrfy" path="res://Assets/characters/2 Punk/Punk_doublejump.png" id="4_wynnb"]
+[ext_resource type="Texture2D" uid="uid://bhr1m6o73at0u" path="res://Assets/characters/2 Punk/Punk_wall_jump.png" id="5_1romf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktxv1"]
 size = Vector2(23, 34)
@@ -48,21 +49,37 @@ region = Rect2(64, 14, 32, 34)
 atlas = ExtResource("3_em14g")
 region = Rect2(96, 14, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wynnb"]
-atlas = ExtResource("4_y6kko")
-region = Rect2(0, 14, 32, 34)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_1romf"]
-atlas = ExtResource("4_y6kko")
-region = Rect2(32, 14, 32, 34)
+atlas = ExtResource("4_wynnb")
+region = Rect2(0, 9, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_em14g"]
-atlas = ExtResource("4_y6kko")
-region = Rect2(64, 14, 32, 34)
+atlas = ExtResource("4_wynnb")
+region = Rect2(32, 9, 32, 36)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_y6kko"]
-atlas = ExtResource("4_y6kko")
-region = Rect2(96, 14, 32, 34)
+atlas = ExtResource("4_wynnb")
+region = Rect2(64, 9, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hjgie"]
+atlas = ExtResource("4_wynnb")
+region = Rect2(96, 9, 32, 36)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pyh6"]
+atlas = ExtResource("5_1romf")
+region = Rect2(0, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njr4q"]
+atlas = ExtResource("5_1romf")
+region = Rect2(32, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hlom6"]
+atlas = ExtResource("5_1romf")
+region = Rect2(64, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8oxr"]
+atlas = ExtResource("5_1romf")
+region = Rect2(96, 16, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ktxv1"]
 animations = [{
@@ -108,9 +125,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wynnb")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_1romf")
 }, {
 "duration": 1.0,
@@ -118,10 +132,30 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_y6kko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hjgie")
 }],
 "loop": 1,
 "name": &"pular",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pyh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njr4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hlom6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8oxr")
+}],
+"loop": 1,
+"name": &"sliding",
+"speed": 5.0
 }]
 
 [node name="Jogador" type="CharacterBody2D" unique_id=468557487]
@@ -134,9 +168,9 @@ shape = SubResource("RectangleShape2D_ktxv1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664493221]
 sprite_frames = SubResource("SpriteFrames_ktxv1")
-animation = &"correr"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.71235824
+frame_progress = 0.96010435
 
 [node name="RayDireita" type="RayCast2D" parent="." unique_id=332692574]
 position = Vector2(0, 2)

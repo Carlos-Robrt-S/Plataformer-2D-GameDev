@@ -4,11 +4,11 @@ extends Node2D
 signal level_completed
 
 @onready var spawn = $Spawn
-@onready var player = $Player
+@onready var player = $Jogador
 @onready var goal = $Meta
 
 func _ready() -> void:
-	player.died.connect(respawn)
+	#player.died.connect(respawn)
 	goal.body_entered.connect(_on_goal_body_entered)
 	respawn()
 

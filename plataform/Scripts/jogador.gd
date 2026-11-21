@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal died
+
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var rayD: RayCast2D = $RayDireita
 @onready var rayE: RayCast2D = $RayEsquerda
@@ -10,9 +12,9 @@ const ACC_ON_WALL: float = 200
 const WALL_JUMP_VELOCITY: Vector2 = Vector2(SPEED, JUMP_VELOCITY)
 
 var timer: Timer
-var is_pulando: bool
-var is_caindo: bool
+var is_jumping: bool
 var is_wall_jumping: bool
+var is_sliding: bool
 
 
 
@@ -26,29 +28,28 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		if (rayD.is_colliding() or rayE.is_colliding()) and velocity.y >= 0:
 			velocity.y += ACC_ON_WALL * delta
+			is_sliding = true
+			is_jumping = false
 				
 		else: 
 			velocity += get_gravity() * delta
+			is_sliding = false
+			is_jumping = true
 			
 		if rayD.is_colliding():
-			check_jump_wall(-1)
+			if check_jump_wall(-1):
+				sprite.flip_h = true
 			
 		elif rayE.is_colliding():
-			check_jump_wall(1)
+			if check_jump_wall(1):
+				sprite.flip_h = false
+	else:
+		is_sliding = false
+		is_jumping = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("pular") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
-
-	if velocity.y > 0:
-		is_pulando = true
-		is_caindo = false
-	elif velocity.y < 0:
-		is_pulando = false
-		is_caindo = true
-	else:
-		is_pulando = false
-		is_caindo = false
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -63,8 +64,11 @@ func _physics_process(delta: float) -> void:
 			
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if is_pulando or is_caindo:
+	
+	
+	if is_sliding:
+		sprite.play("sliding")
+	elif is_jumping:
 		sprite.play("pular")
 	elif velocity.x != 0:
 		sprite.play("correr")
@@ -74,13 +78,18 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	
-func check_jump_wall(direction: int) -> void:
+func check_jump_wall(direction: int) -> bool:
 	if Input.is_action_just_pressed("pular"):
 		velocity.y = WALL_JUMP_VELOCITY.y
 		velocity.x = WALL_JUMP_VELOCITY.x * direction
 		is_wall_jumping = true
 		timer.start(0.2)
-
+		return true
+	
+	return false
 
 func timeout():
 	is_wall_jumping = false
+
+func die():
+	died.emit()
