@@ -48,21 +48,21 @@ region = Rect2(64, 14, 32, 34)
 atlas = ExtResource("3_em14g")
 region = Rect2(96, 14, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hjgie"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wynnb"]
 atlas = ExtResource("4_y6kko")
-region = Rect2(0, 9, 31, 39)
+region = Rect2(0, 14, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1pyh6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1romf"]
 atlas = ExtResource("4_y6kko")
-region = Rect2(48, 9, 31, 39)
+region = Rect2(32, 14, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_njr4q"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_em14g"]
 atlas = ExtResource("4_y6kko")
-region = Rect2(96, 9, 31, 39)
+region = Rect2(64, 14, 32, 34)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hlom6"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6kko"]
 atlas = ExtResource("4_y6kko")
-region = Rect2(144, 9, 31, 39)
+region = Rect2(96, 14, 32, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ktxv1"]
 animations = [{
@@ -108,16 +108,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hjgie")
+"texture": SubResource("AtlasTexture_wynnb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1pyh6")
+"texture": SubResource("AtlasTexture_1romf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_njr4q")
+"texture": SubResource("AtlasTexture_em14g")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hlom6")
+"texture": SubResource("AtlasTexture_y6kko")
 }],
 "loop": 1,
 "name": &"pular",
@@ -134,5 +134,14 @@ shape = SubResource("RectangleShape2D_ktxv1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664493221]
 sprite_frames = SubResource("SpriteFrames_ktxv1")
-animation = &"idle"
+animation = &"correr"
 autoplay = "idle"
+frame_progress = 0.71235824
+
+[node name="RayDireita" type="RayCast2D" parent="." unique_id=332692574]
+position = Vector2(0, 2)
+target_position = Vector2(11, 0)
+
+[node name="RayEsquerda" type="RayCast2D" parent="." unique_id=1967131179]
+position = Vector2(0, 2)
+target_position = Vector2(-14, 0)
