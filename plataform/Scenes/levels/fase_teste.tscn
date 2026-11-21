@@ -1,0 +1,106 @@
+[gd_scene format=4 uid="uid://olep2w5vbsca"]
+
+[ext_resource type="Script" uid="uid://dr4rifl6181pl" path="res://Scripts/fase_teste.gd" id="1_pjqgh"]
+[ext_resource type="Texture2D" uid="uid://dv2shou7neydv" path="res://Assets/atlas/1 Tiles/IndustrialTile_05.png" id="2_qgxeg"]
+[ext_resource type="Texture2D" uid="uid://dw80pl742m7qd" path="res://Assets/atlas/1 Tiles/IndustrialTile_13.png" id="3_lulig"]
+[ext_resource type="Texture2D" uid="uid://synmtyxs5smc" path="res://Assets/atlas/1 Tiles/IndustrialTile_15.png" id="4_0wd0p"]
+[ext_resource type="Texture2D" uid="uid://deahlns11nntv" path="res://Assets/atlas/1 Tiles/IndustrialTile_16.png" id="5_ddtrb"]
+[ext_resource type="Texture2D" uid="uid://ccuctaielkxfa" path="res://Assets/atlas/1 Tiles/IndustrialTile_17.png" id="6_4hro6"]
+[ext_resource type="Texture2D" uid="uid://d2fc0o42rvshc" path="res://Assets/atlas/1 Tiles/IndustrialTile_23.png" id="7_8xe7f"]
+[ext_resource type="Texture2D" uid="uid://kbawl4h4gfh7" path="res://Assets/atlas/1 Tiles/IndustrialTile_25.png" id="8_w7kj2"]
+[ext_resource type="PackedScene" uid="uid://dd7y2thrmaqwh" path="res://Scenes/levels/hazard.tscn" id="9_knm72"]
+[ext_resource type="PackedScene" uid="uid://cnr3lw5vbcxm7" path="res://Scenes/levels/kill_zone.tscn" id="10_xwy1o"]
+[ext_resource type="PackedScene" uid="uid://b118hb03jfom1" path="res://Scenes/levels/player_test.tscn" id="11_v6ol2"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5tj63"]
+texture = ExtResource("2_qgxeg")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_skj2e"]
+texture = ExtResource("3_lulig")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_iawe1"]
+texture = ExtResource("4_0wd0p")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gi2sc"]
+texture = ExtResource("5_ddtrb")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dm2o4"]
+texture = ExtResource("6_4hro6")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1ac4i"]
+texture = ExtResource("7_8xe7f")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_so1y7"]
+texture = ExtResource("8_w7kj2")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
+[sub_resource type="TileSet" id="TileSet_rpkw3"]
+tile_size = Vector2i(32, 32)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_5tj63")
+sources/1 = SubResource("TileSetAtlasSource_skj2e")
+sources/2 = SubResource("TileSetAtlasSource_iawe1")
+sources/3 = SubResource("TileSetAtlasSource_gi2sc")
+sources/4 = SubResource("TileSetAtlasSource_dm2o4")
+sources/5 = SubResource("TileSetAtlasSource_1ac4i")
+sources/6 = SubResource("TileSetAtlasSource_so1y7")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lruo"]
+size = Vector2(38, 39)
+
+[node name="faseTeste" type="Node2D" unique_id=941231126]
+script = ExtResource("1_pjqgh")
+
+[node name="ground" type="TileMapLayer" parent="." unique_id=677954398]
+tile_map_data = PackedByteArray("AAACABMAAAAAAAAAAAADABMAAAAAAAAAAAAEABMAAAAAAAAAAAAFABMAAAAAAAAAAAAGABMAAAAAAAAAAAAHABMAAAAAAAAAAAAIABMAAAAAAAAAAAAJABMAAAAAAAAAAAAKABMAAAAAAAAAAAALABMAAAAAAAAAAAAPABMAAAAAAAAAAAAQABMAAAAAAAAAAAARABMAAAAAAAAAAAASABMAAAAAAAAAAAATABMAAAAAAAAAAAAUABMAAAAAAAAAAAAVABMAAAAAAAAAAAAWABMAAAAAAAAAAAAXABMAAAAAAAAAAAAYABMAAAAAAAAAAAAZABMAAAAAAAAAAAAaABMAAAAAAAAAAAAbABMAAAAAAAAAAAAcABMAAAAAAAAAAAAdABMAAAAAAAAAAAAeABMAAAAAAAAAAAAfABMAAAAAAAAAAAAgABMAAAAAAAAAAAAhABMAAAAAAAAAAAAiABMAAAAAAAAAAAAAABMAAwAAAAAAAAAjABMAAwAAAAAAAGAMABMAAAAAAAAAAAABABMAAAAAAAAAAAAjABIAAQAAAAAAAAAjABEAAQAAAAAAAAAjABAAAQAAAAAAAAAjAA8AAQAAAAAAAAAjAA4AAQAAAAAAAAAjAA0AAQAAAAAAAAAjAAwAAQAAAAAAAAAjAAsAAQAAAAAAAAAjAAoAAQAAAAAAAAAjAAkAAQAAAAAAAAAjAAgAAQAAAAAAAAAjAAcAAQAAAAAAAAAjAAYAAQAAAAAAAAAjAAUAAQAAAAAAAAAjAAQAAQAAAAAAAAAjAAMAAQAAAAAAAAAjAAIAAQAAAAAAAAAjAAEAAQAAAAAAAAAjAAAAAQAAAAAAAAAAABIAAgAAAAAAAAAAABEAAgAAAAAAAAAAABAAAgAAAAAAAAAAAA8AAgAAAAAAAAAAAA4AAgAAAAAAAAAAAA0AAgAAAAAAAAAAAAwAAgAAAAAAAAAAAAsAAgAAAAAAAAAAAAkAAgAAAAAAAAAAAAgAAgAAAAAAAAAAAAcAAgAAAAAAAAAAAAYAAgAAAAAAAAAAAAUAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAAIAAgAAAAAAAAAAAAEAAgAAAAAAAAAAAAAAAgAAAAAAAAAUABAABgAAAAAAAAAVABAABgAAAAAAAAAWABAABgAAAAAAAAAXABAABgAAAAAAAAAYABAABgAAAAAAAAAZABAABgAAAAAAAAAaABAABgAAAAAAAAAgAA4ABgAAAAAAAAAgAA0ABgAAAAAAAAAhAA0ABgAAAAAAAAAhAAwABgAAAAAAAAAiAAwABgAAAAAAAAAiAAsABgAAAAAAAAAeAAoABgAAAAAAAAAdAAoABgAAAAAAAAAcAAoABgAAAAAAAAAYAAoABgAAAAAAAAAXAAoABgAAAAAAAAAWAAoABgAAAAAAAAASAAoABgAAAAAAAAARAAoABgAAAAAAAAAQAAoABgAAAAAAAAALAAoABgAAAAAAAAAKAAoABgAAAAAAAAAJAAoABgAAAAAAAAAMAAoABgAAAAAAAAAfAA8ABgAAAAAAAAAeABAABgAAAAAAAAAdABAABgAAAAAAAAAAAAoAAgAAAAAAAAAFAAoABgAAAAAAAAAEAAoABgAAAAAAAAADAAoABgAAAAAAAAACAAoABgAAAAAAAAABAAoABgAAAAAAAAADAAMABgAAAAAAAAAEAAMABgAAAAAAAAAFAAMABgAAAAAAAAA=")
+tile_set = SubResource("TileSet_rpkw3")
+
+[node name="Spawn" type="Marker2D" parent="." unique_id=914209258]
+position = Vector2(58, 576)
+
+[node name="Meta" type="Area2D" parent="." unique_id=822186251]
+position = Vector2(1080, 569)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Meta" unique_id=390219509]
+position = Vector2(20, 20.5)
+shape = SubResource("RectangleShape2D_8lruo")
+
+[node name="ColorRect" type="ColorRect" parent="Meta" unique_id=447966153]
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.1254902, 1, 0.19607843, 1)
+
+[node name="Hazard" parent="." unique_id=629029864 instance=ExtResource("9_knm72")]
+position = Vector2(159, 598)
+
+[node name="Hazard2" parent="." unique_id=1012301809 instance=ExtResource("9_knm72")]
+position = Vector2(479, 564)
+move_offset = Vector2(0, -96)
+
+[node name="KillZone" parent="." unique_id=111583707 instance=ExtResource("10_xwy1o")]
+position = Vector2(0, 704)
+
+[node name="Player" parent="." unique_id=513318737 instance=ExtResource("11_v6ol2")]
+position = Vector2(38, 564)
