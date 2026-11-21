@@ -115,6 +115,21 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Continuar"
 
+[node name="Sair" type="Button" parent="Player/Camera2D/MenuPause" unique_id=1664474937]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 29.0
+offset_right = 20.0
+offset_bottom = 69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Sair"
+
 [node name="Fundo" type="Node2D" parent="." unique_id=335745308]
 
 [node name="Parallax2D" type="Parallax2D" parent="Fundo" unique_id=697103053]
@@ -148,3 +163,4 @@ scale = Vector2(2, 2)
 texture = ExtResource("9_sq8ne")
 
 [connection signal="pressed" from="Player/Camera2D/MenuPause/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Player/Camera2D/MenuPause/Sair" to="." method="_on_sair_pressed"]

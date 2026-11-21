@@ -9,7 +9,7 @@ func _ready() -> void:
 	$CredMenu.visible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 
@@ -28,3 +28,7 @@ func _on_return_pressed() -> void:
 	$GameName.visible = true
 	botoes.visible = true
 	$CredMenu.visible = false
+
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()

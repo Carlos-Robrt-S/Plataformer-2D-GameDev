@@ -60,3 +60,7 @@ func respawn() -> void:
 func _on_button_pressed() -> void:
 	$Player/Camera2D/MenuPause.visible = false
 	get_tree().paused = false
+
+
+func _on_sair_pressed() -> void:
+	get_tree().quit()
