@@ -170,7 +170,7 @@ shape = SubResource("RectangleShape2D_ktxv1")
 sprite_frames = SubResource("SpriteFrames_ktxv1")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.96010435
+frame_progress = 0.22743964
 
 [node name="RayDireita" type="RayCast2D" parent="." unique_id=332692574]
 position = Vector2(0, 2)

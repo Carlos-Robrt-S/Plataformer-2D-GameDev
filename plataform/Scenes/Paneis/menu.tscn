@@ -1,0 +1,240 @@
+[gd_scene format=3 uid="uid://dj844dgkfdowk"]
+
+[ext_resource type="FontFile" uid="uid://d3f7nqb74wt4i" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium Black.ttf" id="1_bg8pw"]
+[ext_resource type="Texture2D" uid="uid://rn7pf31wpohn" path="res://Assets/atlas/2 Background/5.png" id="1_d3oii"]
+[ext_resource type="FontFile" uid="uid://c4v7qju38lgxc" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium Italic.ttf" id="2_74bde"]
+[ext_resource type="Texture2D" uid="uid://dkf5rcew7l1xq" path="res://Assets/atlas/2 Background/4.png" id="2_326ge"]
+[ext_resource type="Script" uid="uid://bp8wf37vtvcpb" path="res://Scripts/menu.gd" id="3_74bde"]
+[ext_resource type="Texture2D" uid="uid://kag1fru75pp3" path="res://Assets/atlas/2 Background/3.png" id="3_326ge"]
+[ext_resource type="FontFile" uid="uid://7jl58d7imibj" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium.ttf" id="3_616oa"]
+[ext_resource type="Texture2D" uid="uid://1xhdegm0y271" path="res://Assets/atlas/2 Background/2.png" id="4_r0nfg"]
+[ext_resource type="Texture2D" uid="uid://by335lknqbcax" path="res://Assets/atlas/2 Background/1.png" id="5_3xqsy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74bde"]
+bg_color = Color(0, 0.8352941, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg8pw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 12
+
+[sub_resource type="Theme" id="Theme_lqe4b"]
+Button/colors/font_color = Color(0, 0.8352941, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_bg8pw")
+Button/styles/hover = SubResource("StyleBoxFlat_74bde")
+Button/styles/normal = SubResource("StyleBoxFlat_bg8pw")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0.8352941, 1, 1)
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("2_74bde")
+RichTextLabel/fonts/normal_font = ExtResource("3_616oa")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktxv1"]
+bg_color = Color(0, 0, 0, 0.8352941)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 12
+
+[node name="Menu" type="Control" unique_id=939149996]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lqe4b")
+script = ExtResource("3_74bde")
+
+[node name="GameName" type="Label" parent="." unique_id=729247629]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -181.5
+offset_top = 120.0
+offset_right = 181.5
+offset_bottom = 192.0
+grow_horizontal = 2
+text = "O jogo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botoes" type="Control" parent="." unique_id=251310076]
+visible = false
+z_index = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Iniciar" type="Button" parent="Botoes" unique_id=736715584]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 8.0
+grow_horizontal = 2
+text = "Iniciar"
+
+[node name="Config" type="Button" parent="Botoes" unique_id=344532176]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Config
+"
+
+[node name="Creditos" type="Button" parent="Botoes" unique_id=1029881529]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Créditos"
+
+[node name="CredMenu" type="Control" parent="." unique_id=1507633683]
+z_index = 1
+custom_minimum_size = Vector2(200, 300)
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CredText" type="Label" parent="CredMenu" unique_id=697231923]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 19.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.8352941, 1, 0)
+theme_override_fonts/font = ExtResource("3_616oa")
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ktxv1")
+text = "Teste
+
+
+
+
+
+
+
+
+
+"
+
+[node name="Return" type="Button" parent="CredMenu" unique_id=767140578]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -31.5
+offset_top = -21.0
+offset_right = 31.5
+grow_horizontal = 2
+grow_vertical = 0
+text = "Voltar"
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1308950896]
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(100, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=899035383]
+position = Vector2(576, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("1_d3oii")
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1614455819]
+z_index = -1
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(75, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=2090855171]
+position = Vector2(576, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("2_326ge")
+
+[node name="Parallax2D3" type="Parallax2D" parent="." unique_id=884713179]
+z_index = -2
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(50, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=333881058]
+position = Vector2(576, 328)
+scale = Vector2(2, 2)
+texture = ExtResource("3_326ge")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1625466486]
+z_index = -3
+repeat_size = Vector2(1152, 0)
+autoscroll = Vector2(30, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=993392060]
+position = Vector2(576, 320)
+scale = Vector2(2, 2)
+texture = ExtResource("4_r0nfg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1144630214]
+z_index = -4
+position = Vector2(576, 320)
+scale = Vector2(2, 2)
+texture = ExtResource("5_3xqsy")
+
+[connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Botoes/Creditos" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="CredMenu/Return" to="." method="_on_return_pressed"]
