@@ -72,7 +72,6 @@ theme = SubResource("Theme_lqe4b")
 script = ExtResource("3_74bde")
 
 [node name="GameName" type="Label" parent="." unique_id=729247629]
-visible = false
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 1
 anchors_preset = 5
@@ -88,7 +87,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Botoes" type="Control" parent="." unique_id=251310076]
-visible = false
 z_index = 1
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 1
@@ -137,6 +135,7 @@ grow_vertical = 0
 text = "Créditos"
 
 [node name="CredMenu" type="Control" parent="." unique_id=1507633683]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(200, 300)
 propagate_maximum_size = true

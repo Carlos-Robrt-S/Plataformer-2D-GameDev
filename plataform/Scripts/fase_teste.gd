@@ -4,7 +4,7 @@ extends Node2D
 signal level_completed
 
 @onready var spawn = $Spawn
-@onready var player = $Jogador
+@onready var player = $Player
 @onready var goal = $Meta
 
 func _ready() -> void:
