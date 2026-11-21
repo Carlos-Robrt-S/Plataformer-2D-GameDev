@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dd7y2thrmaqwh"]
+
+[ext_resource type="Script" uid="uid://3fosmab013vk" path="res://Scripts/hazard.gd" id="1_np72p"]
+[ext_resource type="Texture2D" uid="uid://co18sdaytf0a7" path="res://Assets/atlas/3 Objects/16-bit-spike-Sheet.png" id="2_rxcau"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lruo"]
+size = Vector2(80, 13)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q31in"]
+texture = ExtResource("2_rxcau")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_8lruo"]
+sources/0 = SubResource("TileSetAtlasSource_q31in")
+
+[node name="spikes" type="Area2D" unique_id=629029864]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_np72p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1386001652]
+position = Vector2(40, 9.5)
+shape = SubResource("RectangleShape2D_8lruo")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1739785755]
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_8lruo")

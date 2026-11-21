@@ -1,15 +1,18 @@
 extends Node2D
-# Script da raiz de cada fase.
 
 signal level_completed
 
+const FINAL_CHECKPOINT: int = 5
+
 @onready var spawn = $Spawn
 @onready var player = $Player
-@onready var goal = $Meta
-# Retângulo (em pixels) que limita a câmera nesta fase.
+
 @export var camera_limits: Rect2i = Rect2i(0, 0, 1920, 640)
 
 var camera: Camera2D = null
+var respawn_position: Vector2
+var checkpoint_order: int = 0
+var level_finished: bool = false
 
 
 func _ready() -> void:
@@ -19,18 +22,31 @@ func _ready() -> void:
 		camera.limit_top = camera_limits.position.y
 		camera.limit_right = camera_limits.end.x
 		camera.limit_bottom = camera_limits.end.y
-
-	player.died.connect(respawn)
-	goal.body_entered.connect(_on_goal_body_entered)
-	respawn()
 	
+	respawn_position = spawn.global_position
+	
+	for checkpoint in get_tree().get_nodes_in_group("checkpoint"):
+		checkpoint.connect("activated", _on_checkpoint_activated)
+	
+	player.died.connect(respawn)
+	respawn()
+
+
+func _on_checkpoint_activated(pos: Vector2, order: int) -> void:
+	if order <= checkpoint_order or level_finished:
+		return
+	
+	checkpoint_order = order
+	respawn_position = pos
+	
+	if order == FINAL_CHECKPOINT:
+		level_finished = true
+		level_completed.emit()
+
+
 func respawn() -> void:
-	player.global_position = spawn.global_position
+	player.global_position = respawn_position
 	player.velocity = Vector2.ZERO
+	
 	if camera != null:
 		camera.reset_smoothing()
-
-func _on_goal_body_entered(body: Node2D) -> void:
-	if body.is_in_group("player"):
-		print("fase cmpleta")
-		level_completed.emit()
