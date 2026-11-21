@@ -16,6 +16,7 @@ var level_finished: bool = false
 
 
 func _ready() -> void:
+	$Player/Camera2D/MenuPause.visible = false
 	camera = player.find_child("Camera2D", true, false)
 	if camera != null:
 		camera.limit_left = camera_limits.position.x
@@ -31,6 +32,10 @@ func _ready() -> void:
 	player.died.connect(respawn)
 	respawn()
 
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("pausar"):
+		$Player/Camera2D/MenuPause.visible = true
+		get_tree().paused = true
 
 func _on_checkpoint_activated(pos: Vector2, order: int) -> void:
 	if order <= checkpoint_order or level_finished:
@@ -50,3 +55,8 @@ func respawn() -> void:
 	
 	if camera != null:
 		camera.reset_smoothing()
+
+
+func _on_button_pressed() -> void:
+	$Player/Camera2D/MenuPause.visible = false
+	get_tree().paused = false

@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bhr1m6o73at0u" path="res://Assets/characters/2 Punk/Punk_wall_jump.png" id="5_1romf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktxv1"]
-size = Vector2(23, 34)
+size = Vector2(19, 33)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xse76"]
 atlas = ExtResource("2_1romf")
@@ -163,19 +163,19 @@ collision_layer = 2
 script = ExtResource("1_wynnb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2065832554]
-position = Vector2(-1.5, 0)
+position = Vector2(-1.5, 0.5)
 shape = SubResource("RectangleShape2D_ktxv1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=664493221]
 sprite_frames = SubResource("SpriteFrames_ktxv1")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.22743964
+frame_progress = 0.36221582
 
 [node name="RayDireita" type="RayCast2D" parent="." unique_id=332692574]
 position = Vector2(0, 2)
-target_position = Vector2(11, 0)
+target_position = Vector2(10, 0)
 
 [node name="RayEsquerda" type="RayCast2D" parent="." unique_id=1967131179]
 position = Vector2(0, 2)
-target_position = Vector2(-14, 0)
+target_position = Vector2(-13, 0)

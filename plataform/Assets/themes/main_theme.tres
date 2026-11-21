@@ -1,0 +1,43 @@
+[gd_resource type="Theme" format=3 uid="uid://dk6fsi0ja5kay"]
+
+[ext_resource type="FontFile" uid="uid://d3f7nqb74wt4i" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium Black.ttf" id="1_rr0ax"]
+[ext_resource type="FontFile" uid="uid://c4v7qju38lgxc" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium Italic.ttf" id="2_0el4u"]
+[ext_resource type="FontFile" uid="uid://7jl58d7imibj" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium.ttf" id="3_31vc3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_74bde"]
+bg_color = Color(0, 0.8352941, 1, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bg8pw"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+corner_detail = 12
+
+[resource]
+Button/colors/font_color = Color(0, 0.8352941, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/fonts/font = ExtResource("1_rr0ax")
+Button/styles/hover = SubResource("StyleBoxFlat_74bde")
+Button/styles/normal = SubResource("StyleBoxFlat_bg8pw")
+Label/colors/font_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0.8352941, 1, 1)
+Label/font_sizes/font_size = 64
+Label/fonts/font = ExtResource("2_0el4u")
+RichTextLabel/fonts/normal_font = ExtResource("3_31vc3")
