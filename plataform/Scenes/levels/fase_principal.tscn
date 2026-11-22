@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://lg6yxbj50wc7" path="res://Scenes/hazards/saw.tscn" id="8_qqq5w"]
 [ext_resource type="Texture2D" uid="uid://dkf5rcew7l1xq" path="res://Assets/atlas/2 Background/4.png" id="9_sq8ne"]
 [ext_resource type="PackedScene" uid="uid://cnr3lw5vbcxm7" path="res://Scenes/levels/kill_zone.tscn" id="10_2p54t"]
+[ext_resource type="AudioStream" uid="uid://xgyfc7pwdgjr" path="res://Assets/audio/sfx/playerhurt.wav" id="14_jbp0s"]
+[ext_resource type="PackedScene" uid="uid://cseb0lqimgxbb" path="res://Scenes/Paneis/hud.tscn" id="15_26unb"]
 
 [node name="fase_principal" type="Node2D" unique_id=941231126]
 script = ExtResource("1_squgx")
@@ -290,6 +292,12 @@ offset_bottom = 69.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Sair"
+
+[node name="SomMorte" type="AudioStreamPlayer" parent="." unique_id=2063042511]
+stream = ExtResource("14_jbp0s")
+bus = &"SFX"
+
+[node name="HUD" parent="." unique_id=859722528 instance=ExtResource("15_26unb")]
 
 [connection signal="pressed" from="Player/Camera2D/MenuPause/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Player/Camera2D/MenuPause/Sair" to="." method="_on_sair_pressed"]

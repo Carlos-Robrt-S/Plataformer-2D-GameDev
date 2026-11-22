@@ -7,6 +7,9 @@ const FINAL_CHECKPOINT: int = 5
 @onready var spawn = $Spawn
 @onready var player = $Player
 
+@onready var som_morte: AudioStreamPlayer = $SomMorte
+
+
 @export var camera_limits: Rect2i = Rect2i(0, 0, 2528, 640)
 
 var camera: Camera2D = null
@@ -16,7 +19,7 @@ var level_finished: bool = false
 
 
 func _ready() -> void:
-	$Player/Camera2D/MenuPause.visible = false
+	#$Player/Camera2D/MenuPause.visible = false
 	camera = player.find_child("Camera2D", true, false)
 	if camera != null:
 		camera.limit_left = camera_limits.position.x
@@ -29,7 +32,10 @@ func _ready() -> void:
 	for checkpoint in get_tree().get_nodes_in_group("checkpoint"):
 		checkpoint.connect("activated", _on_checkpoint_activated)
 	
-	player.died.connect(respawn)
+	player.died.connect(_ao_morrer)
+	level_completed.connect(_ao_completar)
+	
+	GameState.iniciar_fase()
 	respawn()
 
 func _process(_delta: float) -> void:
@@ -64,3 +70,19 @@ func _on_button_pressed() -> void:
 
 func _on_sair_pressed() -> void:
 	get_tree().quit()
+
+func _ao_morrer() -> void:
+	if level_finished:
+		return
+		
+	som_morte.play()
+	
+	if GameState.registrar_morte():
+		respawn()
+	else:
+		level_finished = true
+		$GameOver.mostrar()
+		
+func _ao_completar() -> void:
+	var resultado: Dictionary = GameState.concluir_fase()
+	$Vitoria.mostrar(resultado)
