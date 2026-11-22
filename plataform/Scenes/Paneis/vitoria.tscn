@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://bnrxkmdj7cqar"]
+
+[ext_resource type="Script" uid="uid://gshkcskmvgen" path="res://Scripts/vitoria.gd" id="1_fvsxb"]
+[ext_resource type="AudioStream" uid="uid://bguabbu0ufygb" path="res://Assets/audio/sfx/jingles_NES12.ogg" id="2_b6asr"]
+[ext_resource type="Theme" uid="uid://dk6fsi0ja5kay" path="res://Assets/themes/main_theme.tres" id="2_my8vg"]
+
+[node name="Vitoria" type="CanvasLayer" unique_id=754664336]
+process_mode = 3
+visible = false
+script = ExtResource("1_fvsxb")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=359334983]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Painel" type="VBoxContainer" parent="." unique_id=1952971026]
+custom_minimum_size = Vector2(500, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -264.5
+offset_top = -256.0
+offset_right = 264.5
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_my8vg")
+theme_override_constants/separation = 12
+
+[node name="Titulo" type="Label" parent="Painel" unique_id=1035389308]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8352941, 1, 1)
+theme_override_font_sizes/font_size = 48
+text = "FASE CONCLUÍDA"
+horizontal_alignment = 1
+
+[node name="Rank" type="Label" parent="Painel" unique_id=1256161590]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 72
+horizontal_alignment = 1
+
+[node name="NovoRecorde" type="Label" parent="Painel" unique_id=109334358]
+visible = false
+layout_mode = 2
+theme_override_colors/font_color = Color(0.98939866, 0.98939866, 0.98939854, 1)
+theme_override_font_sizes/font_size = 32
+text = "NOVO RECORDE!"
+horizontal_alignment = 1
+
+[node name="Tempo" type="Label" parent="Painel" unique_id=932021541]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="Mortes" type="Label" parent="Painel" unique_id=1946492295]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="TempoFinal" type="Label" parent="Painel" unique_id=63254718]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="Recorde" type="Label" parent="Painel" unique_id=171356625]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9529412, 0.9529412, 0.105882354, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="Reiniciar" type="Button" parent="Painel" unique_id=2008152455]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tentar novamente"
+
+[node name="Menu" type="Button" parent="Painel" unique_id=366708062]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu principal"
+
+[node name="SomVitoria" type="AudioStreamPlayer" parent="." unique_id=1640224559]
+process_mode = 3
+stream = ExtResource("2_b6asr")
+
+[connection signal="pressed" from="Painel/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Painel/Menu" to="." method="_on_menu_pressed"]

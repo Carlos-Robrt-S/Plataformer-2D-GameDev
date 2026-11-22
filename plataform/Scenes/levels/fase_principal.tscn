@@ -15,6 +15,7 @@
 [ext_resource type="AudioStream" uid="uid://xgyfc7pwdgjr" path="res://Assets/audio/sfx/playerhurt.wav" id="14_jbp0s"]
 [ext_resource type="PackedScene" uid="uid://cseb0lqimgxbb" path="res://Scenes/Paneis/hud.tscn" id="15_26unb"]
 [ext_resource type="PackedScene" uid="uid://ctmlj38vfy4lp" path="res://Scenes/Paneis/menu_pausa.tscn" id="15_54njk"]
+[ext_resource type="PackedScene" uid="uid://bnrxkmdj7cqar" path="res://Scenes/Paneis/vitoria.tscn" id="16_54njk"]
 
 [node name="fase_principal" type="Node2D" unique_id=941231126]
 script = ExtResource("1_squgx")
@@ -250,3 +251,5 @@ bus = &"SFX"
 [node name="HUD" parent="." unique_id=859722528 instance=ExtResource("15_26unb")]
 
 [node name="MenuPausa" parent="." unique_id=547587849 instance=ExtResource("15_54njk")]
+
+[node name="Vitoria" parent="." unique_id=754664336 instance=ExtResource("16_54njk")]

@@ -1,15 +1,15 @@
 extends Node
 
-const caminho_save: String = "user://plataformer.cfg"
-const max_vidas: int = 5
-const penalidade_morte: float = 2.0
+const CAMINHO_SAVE: String = "user://plataformer.cfg"
+const MAX_VIDAS: int = 5
+const PENALIDADE_MORTE: float = 2.0
 
-const ranks: Array = [["S", 60.0], ["A", 80.0], ["B", 105.0], ["C", 140.0]]
+const RANKS: Array = [["S", 60.0], ["A", 80.0], ["B", 105.0], ["C", 140.0]]
 
 signal vidas_alteradas(vidas:int)
 signal tempo_alterado(tempo: float)
 
-var vidas: int = max_vidas
+var vidas: int = MAX_VIDAS
 var tempo: float = 0.0
 var mortes: int = 0
 var cronometro_ativo:bool = false
@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 		tempo_alterado.emit(tempo)
 
 func iniciar_fase() -> void:
-	vidas = max_vidas
+	vidas = MAX_VIDAS
 	tempo = 0.0
 	mortes = 0
 	cronometro_ativo = true
@@ -51,7 +51,7 @@ func registrar_morte() -> bool:
 	return true
 	
 func tempo_final() -> float:
-	return tempo + mortes * penalidade_morte
+	return tempo + mortes * PENALIDADE_MORTE
 	
 func concluir_fase() -> Dictionary:
 	cronometro_ativo = false
@@ -71,7 +71,7 @@ func concluir_fase() -> Dictionary:
 	}
 
 func rank_de(t: float) -> String:
-	for faixa in ranks:
+	for faixa in RANKS:
 		if t <= faixa[1]:
 			return faixa[0]
 	return "D"
@@ -102,11 +102,11 @@ func salvar() -> void:
 	cfg.set_value("audio", "geral", volume_geral)
 	cfg.set_value("audio", "musica", volume_musica)
 	cfg.set_value("audio", "sfx", volume_sfx)
-	cfg.save(caminho_save)
+	cfg.save(CAMINHO_SAVE)
 	
 func carregar() -> void:
 	var cfg:= ConfigFile.new()
-	if cfg.load(caminho_save) != OK:
+	if cfg.load(CAMINHO_SAVE) != OK:
 		return
 	melhor_tempo = cfg.get_value("recorde", "melhor_tempo", 0.0)
 	volume_geral = cfg.get_value("audio", "geral", 1.0)
