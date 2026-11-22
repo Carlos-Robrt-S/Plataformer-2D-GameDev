@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://lg6yxbj50wc7"]
+
+[ext_resource type="Script" uid="uid://3fosmab013vk" path="res://Scripts/hazard.gd" id="1_neqhf"]
+[ext_resource type="Texture2D" uid="uid://1uynjju01ls1" path="res://Assets/atlas/sprites/saw_16_0.png" id="2_7dvkk"]
+[ext_resource type="Texture2D" uid="uid://bn3xwn4xuvgwf" path="res://Assets/atlas/sprites/saw_16_1.png" id="3_w7jd0"]
+[ext_resource type="Texture2D" uid="uid://bwewah6gspgx2" path="res://Assets/atlas/sprites/saw_16_2.png" id="4_iu816"]
+[ext_resource type="Texture2D" uid="uid://cpjh65arqdjdl" path="res://Assets/atlas/sprites/saw_16_3.png" id="5_l4201"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fbdut"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7dvkk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w7jd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iu816")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l4201")
+}],
+"loop": 1,
+"name": &"spin",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nqb0d"]
+radius = 14.3178215
+
+[node name="saw" type="Area2D" unique_id=629029864]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_neqhf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1855232703]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_fbdut")
+animation = &"spin"
+autoplay = "spin"
+frame_progress = 0.87917036
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1386001652]
+shape = SubResource("CircleShape2D_nqb0d")

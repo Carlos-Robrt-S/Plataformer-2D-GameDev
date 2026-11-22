@@ -7,7 +7,7 @@ const FINAL_CHECKPOINT: int = 5
 @onready var spawn = $Spawn
 @onready var player = $Player
 
-@export var camera_limits: Rect2i = Rect2i(0, 0, 1920, 640)
+@export var camera_limits: Rect2i = Rect2i(0, 0, 2528, 640)
 
 var camera: Camera2D = null
 var respawn_position: Vector2
