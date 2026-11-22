@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://1xhdegm0y271" path="res://Assets/atlas/2 Background/2.png" id="4_r0nfg"]
 [ext_resource type="Texture2D" uid="uid://by335lknqbcax" path="res://Assets/atlas/2 Background/1.png" id="5_3xqsy"]
 [ext_resource type="AudioStream" uid="uid://bad6snbx1gnha" path="res://Assets/audio/sfx/button.wav" id="9_hkqhq"]
-[ext_resource type="AudioStream" uid="uid://sokl00l0n7ga" path="res://Assets/audio/music/Caves.ogg" id="10_nkr6g"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktxv1"]
 bg_color = Color(0, 0, 0, 0.8352941)
@@ -231,11 +230,6 @@ texture = ExtResource("5_3xqsy")
 [node name="SomClique" type="AudioStreamPlayer" parent="." unique_id=617900028]
 stream = ExtResource("9_hkqhq")
 bus = &"SFX"
-
-[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=236953536]
-stream = ExtResource("10_nkr6g")
-autoplay = true
-bus = &"Music"
 
 [connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]
 [connection signal="pressed" from="Botoes/Config" to="." method="_on_config_pressed"]

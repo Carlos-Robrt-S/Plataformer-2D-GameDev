@@ -17,7 +17,7 @@ func _mostrar_recorde() -> void:
 		recorde.text = "Nenhum recorde ainda"
 	else:
 		recorde.text = "Melhor tempo: %s   (rank %s)" % [
-			GameState.formatar(GameState.melhor_tempo),
+			GameState.formatar_tempo(GameState.melhor_tempo),
 			GameState.rank_de(GameState.melhor_tempo),
 		]
 

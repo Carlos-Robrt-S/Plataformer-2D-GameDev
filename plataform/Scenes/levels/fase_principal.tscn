@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://ctmlj38vfy4lp" path="res://Scenes/Paneis/menu_pausa.tscn" id="15_54njk"]
 [ext_resource type="PackedScene" uid="uid://bnrxkmdj7cqar" path="res://Scenes/Paneis/vitoria.tscn" id="16_54njk"]
 [ext_resource type="PackedScene" uid="uid://bqaamtqpaxtx0" path="res://Scenes/Paneis/game_over.tscn" id="17_cde0r"]
-[ext_resource type="AudioStream" uid="uid://sokl00l0n7ga" path="res://Assets/audio/music/Caves.ogg" id="18_nhadk"]
 
 [node name="fase_principal" type="Node2D" unique_id=941231126]
 script = ExtResource("1_squgx")
@@ -257,8 +256,3 @@ bus = &"SFX"
 [node name="Vitoria" parent="." unique_id=754664336 instance=ExtResource("16_54njk")]
 
 [node name="GameOver" parent="." unique_id=197417081 instance=ExtResource("17_cde0r")]
-
-[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=744234992]
-stream = ExtResource("18_nhadk")
-autoplay = true
-bus = &"Music"

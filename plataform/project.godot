@@ -22,6 +22,7 @@ buses/default_bus_layout="uid://cpts8cmh8ncks"
 [autoload]
 
 GameState="*uid://dh1q41bksi5fy"
+Musica="*uid://c136ytu2k7d0w"
 
 [display]
 
