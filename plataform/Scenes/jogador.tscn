@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cymuo62bcvhp6" path="res://Assets/characters/2 Punk/Punk_idle.png" id="3_em14g"]
 [ext_resource type="Texture2D" uid="uid://cwvxo48wekrfy" path="res://Assets/characters/2 Punk/Punk_doublejump.png" id="4_wynnb"]
 [ext_resource type="Texture2D" uid="uid://bhr1m6o73at0u" path="res://Assets/characters/2 Punk/Punk_wall_jump.png" id="5_1romf"]
+[ext_resource type="AudioStream" uid="uid://0bamrvwhglul" path="res://Assets/audio/sfx/jump.wav" id="6_y6kko"]
+[ext_resource type="AudioStream" uid="uid://bvtv554pirvyw" path="res://Assets/audio/sfx/dashwoosh.wav" id="7_xse76"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ktxv1"]
 size = Vector2(19, 33)
@@ -179,3 +181,11 @@ target_position = Vector2(10, 0)
 [node name="RayEsquerda" type="RayCast2D" parent="." unique_id=1967131179]
 position = Vector2(0, 2)
 target_position = Vector2(-13, 0)
+
+[node name="SomPulo" type="AudioStreamPlayer" parent="." unique_id=1585261763]
+stream = ExtResource("6_y6kko")
+bus = &"SFX"
+
+[node name="SomPuloDuplo" type="AudioStreamPlayer" parent="." unique_id=259766143]
+stream = ExtResource("7_xse76")
+bus = &"SFX"
