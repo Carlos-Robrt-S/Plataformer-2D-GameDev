@@ -44,7 +44,7 @@ offset_top = 120.0
 offset_right = 181.5
 offset_bottom = 192.0
 grow_horizontal = 2
-text = "O jogo"
+text = "CyberRunners 2088"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -130,43 +130,53 @@ horizontal_alignment = 1
 [node name="CredMenu" type="Control" parent="." unique_id=1507633683]
 visible = false
 z_index = 1
-custom_minimum_size = Vector2(200, 300)
-propagate_maximum_size = true
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CredText" type="Label" parent="CredMenu" unique_id=697231923]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 19.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -350.0
+offset_top = 16.0
+offset_right = 350.0
+offset_bottom = 40.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0, 0.8352941, 1, 0)
 theme_override_fonts/font = ExtResource("3_616oa")
-theme_override_font_sizes/font_size = 12
+theme_override_font_sizes/font_size = 16
 theme_override_styles/normal = SubResource("StyleBoxFlat_ktxv1")
-text = "Plataformer 2D
+text = "CyberRunners 2088
 DCC148 - Desenvolvimento de Jogos - UFJF
 
-Carlos Roberto S. - movimentacao e design de personageem
-Manuela Grimaldi  - obstaculos e level design
-João Victor Soares - lógica de pontuacao e telas
+Carlos Roberto S. - movimentos e design de personagem
+Manuela Grimaldi - obstáculos e level design
+João Victor Soares - pontos, pulo duplo e telas
 
-Arte: Craftpix (Side-Scroller Traps e Cyberpunk Characters)
-Sons: MoxieCat e Kenney (CC0)
-Musica: tricksntraps / glitchart (CC0)
+ARTE
+Craftpix.net (Side-Scroller Traps, tiles, fundos, objetos
+e personagens Cyberpunk) - craftpix.net/file-licenses
+
+SONS
+MoxieCat - 8-bit Platformer SFX (CC0)
+Kenney - 85 Short music jingles (CC0)
+
+MÚSICA
+\"Caves\" - tricksntraps (CC0)
+
+FONTE
+Future Millennium - futuremillennium.com
+CC BY-NC-ND 3.0
+
+Icones de vida do HUD: pixel art propria
 Engine: Godot 4.7"
+horizontal_alignment = 1
 
 [node name="Return" type="Button" parent="CredMenu" unique_id=767140578]
 layout_mode = 1
@@ -176,8 +186,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -31.5
-offset_top = -21.0
+offset_top = -56.0
 offset_right = 31.5
+offset_bottom = -24.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Voltar"
