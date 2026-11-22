@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bqaamtqpaxtx0"]
+
+[ext_resource type="Script" uid="uid://dk38uim4tedqp" path="res://Scripts/game_over.gd" id="1_xv71l"]
+[ext_resource type="Theme" uid="uid://dk6fsi0ja5kay" path="res://Assets/themes/main_theme.tres" id="2_1c62u"]
+[ext_resource type="AudioStream" uid="uid://2b76fvfg3fjo" path="res://Assets/audio/sfx/jingles_NES07.ogg" id="3_uxdw1"]
+
+[node name="GameOver" type="CanvasLayer" unique_id=197417081]
+process_mode = 3
+script = ExtResource("1_xv71l")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1059084848]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.5647059, 0.007843138, 0.02745098, 0.7019608)
+
+[node name="Painel" type="VBoxContainer" parent="." unique_id=68584204]
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.5
+offset_top = -99.0
+offset_right = 187.5
+offset_bottom = 99.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_1c62u")
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Painel" unique_id=1256606038]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 56
+text = "GAME OVER!"
+horizontal_alignment = 1
+
+[node name="Resumo" type="Label" parent="Painel" unique_id=1012526533]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Reiniciar" type="Button" parent="Painel" unique_id=1721948341]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Tentar novamente"
+
+[node name="Menu" type="Button" parent="Painel" unique_id=1859871425]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Menu principal"
+
+[node name="SomDerrota" type="AudioStreamPlayer" parent="." unique_id=1888542225]
+process_mode = 3
+stream = ExtResource("3_uxdw1")
+bus = &"Music"
+
+[connection signal="pressed" from="Painel/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Painel/Menu" to="." method="_on_menu_pressed"]

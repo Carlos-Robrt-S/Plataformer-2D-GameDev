@@ -1,7 +1,7 @@
 extends Node
 
 const CAMINHO_SAVE: String = "user://plataformer.cfg"
-const MAX_VIDAS: int = 5
+const MAX_VIDAS: int = 1
 const PENALIDADE_MORTE: float = 2.0
 
 const RANKS: Array = [["S", 60.0], ["A", 80.0], ["B", 105.0], ["C", 140.0]]
