@@ -38,10 +38,10 @@ func _ready() -> void:
 	GameState.iniciar_fase()
 	respawn()
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("pausar"):
-		$Player/Camera2D/MenuPause.visible = true
-		get_tree().paused = true
+#func _process(_delta: float) -> void:
+	#if Input.is_action_just_pressed("pausar"):
+		#$Player/Camera2D/MenuPause.visible = true
+		#get_tree().paused = true
 
 func _on_checkpoint_activated(pos: Vector2, order: int) -> void:
 	if order <= checkpoint_order or level_finished:
@@ -63,13 +63,13 @@ func respawn() -> void:
 		camera.reset_smoothing()
 
 
-func _on_button_pressed() -> void:
-	$Player/Camera2D/MenuPause.visible = false
-	get_tree().paused = false
+#func _on_button_pressed() -> void:
+	#$Player/Camera2D/MenuPause.visible = false
+	#get_tree().paused = false
 
 
-func _on_sair_pressed() -> void:
-	get_tree().quit()
+#func _on_sair_pressed() -> void:
+	#get_tree().quit()
 
 func _ao_morrer() -> void:
 	if level_finished:
@@ -81,8 +81,10 @@ func _ao_morrer() -> void:
 		respawn()
 	else:
 		level_finished = true
+		$MenuPausa.bloqueado = true
 		$GameOver.mostrar()
 		
 func _ao_completar() -> void:
+	$MenuPausa.bloqueado = true
 	var resultado: Dictionary = GameState.concluir_fase()
 	$Vitoria.mostrar(resultado)

@@ -8,13 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://sbkdok80yjsj" path="res://Scenes/levels/checkpoints.tscn" id="6_7mknf"]
 [ext_resource type="Texture2D" uid="uid://rn7pf31wpohn" path="res://Assets/atlas/2 Background/5.png" id="6_cde0r"]
 [ext_resource type="Texture2D" uid="uid://by335lknqbcax" path="res://Assets/atlas/2 Background/1.png" id="7_7mknf"]
-[ext_resource type="Theme" uid="uid://dk6fsi0ja5kay" path="res://Assets/themes/main_theme.tres" id="7_sq8ne"]
 [ext_resource type="Texture2D" uid="uid://1xhdegm0y271" path="res://Assets/atlas/2 Background/2.png" id="8_hhyiv"]
 [ext_resource type="PackedScene" uid="uid://lg6yxbj50wc7" path="res://Scenes/hazards/saw.tscn" id="8_qqq5w"]
 [ext_resource type="Texture2D" uid="uid://dkf5rcew7l1xq" path="res://Assets/atlas/2 Background/4.png" id="9_sq8ne"]
 [ext_resource type="PackedScene" uid="uid://cnr3lw5vbcxm7" path="res://Scenes/levels/kill_zone.tscn" id="10_2p54t"]
 [ext_resource type="AudioStream" uid="uid://xgyfc7pwdgjr" path="res://Assets/audio/sfx/playerhurt.wav" id="14_jbp0s"]
 [ext_resource type="PackedScene" uid="uid://cseb0lqimgxbb" path="res://Scenes/Paneis/hud.tscn" id="15_26unb"]
+[ext_resource type="PackedScene" uid="uid://ctmlj38vfy4lp" path="res://Scenes/Paneis/menu_pausa.tscn" id="15_54njk"]
 
 [node name="fase_principal" type="Node2D" unique_id=941231126]
 script = ExtResource("1_squgx")
@@ -243,61 +243,10 @@ position = Vector2(57, 590)
 position = Vector2(0, -35)
 zoom = Vector2(2, 2)
 
-[node name="MenuPause" type="Control" parent="Player/Camera2D" unique_id=1018113698]
-process_mode = 3
-visible = false
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("7_sq8ne")
-
-[node name="Label" type="Label" parent="Player/Camera2D/MenuPause" unique_id=1150204131]
-layout_mode = 0
-offset_left = -54.0
-offset_top = -56.0
-offset_right = 296.0
-offset_bottom = 16.0
-theme_override_font_sizes/font_size = 20
-text = "Pausado..."
-
-[node name="Button" type="Button" parent="Player/Camera2D/MenuPause" unique_id=2141907080]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -44.5
-offset_top = -15.5
-offset_right = 44.5
-offset_bottom = 15.5
-grow_horizontal = 2
-grow_vertical = 2
-text = "Continuar"
-
-[node name="Sair" type="Button" parent="Player/Camera2D/MenuPause" unique_id=1664474937]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -20.0
-offset_top = 29.0
-offset_right = 20.0
-offset_bottom = 69.0
-grow_horizontal = 2
-grow_vertical = 0
-text = "Sair"
-
 [node name="SomMorte" type="AudioStreamPlayer" parent="." unique_id=2063042511]
 stream = ExtResource("14_jbp0s")
 bus = &"SFX"
 
 [node name="HUD" parent="." unique_id=859722528 instance=ExtResource("15_26unb")]
 
-[connection signal="pressed" from="Player/Camera2D/MenuPause/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Player/Camera2D/MenuPause/Sair" to="." method="_on_sair_pressed"]
+[node name="MenuPausa" parent="." unique_id=547587849 instance=ExtResource("15_54njk")]
