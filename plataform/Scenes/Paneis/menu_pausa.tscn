@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://ctmlj38vfy4lp"]
+
+[ext_resource type="Script" uid="uid://bnfh37ayj08jg" path="res://Scripts/menu_pausa.gd" id="1_1qhmh"]
+[ext_resource type="Theme" uid="uid://dk6fsi0ja5kay" path="res://Assets/themes/main_theme.tres" id="2_8ijne"]
+[ext_resource type="AudioStream" uid="uid://bad6snbx1gnha" path="res://Assets/audio/sfx/button.wav" id="2_buxw8"]
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=547587849]
+process_mode = 3
+visible = false
+script = ExtResource("1_1qhmh")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1967087471]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6)
+
+[node name="Painel" type="VBoxContainer" parent="." unique_id=884946264]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -29.5
+offset_right = 20.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_8ijne")
+
+[node name="Label" type="Label" parent="Painel" unique_id=149740826]
+layout_mode = 2
+text = "PAUSADO"
+
+[node name="Continuar" type="Button" parent="Painel" unique_id=2034506789]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Reiniciar" type="Button" parent="Painel" unique_id=1386258336]
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="Menu" type="Button" parent="Painel" unique_id=1626585196]
+layout_mode = 2
+text = "Menu principal"
+
+[node name="SomClique" type="AudioStreamPlayer" parent="." unique_id=673916203]
+process_mode = 3
+stream = ExtResource("2_buxw8")
+bus = &"SFX"
+
+[connection signal="pressed" from="Painel/Continuar" to="." method="_on_continuar_pressed"]
+[connection signal="pressed" from="Painel/Reiniciar" to="." method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="Painel/Menu" to="." method="_on_menu_pressed"]

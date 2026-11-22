@@ -8,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://7jl58d7imibj" path="res://Assets/atlas/5 Font/futuremillennium/FutureMillennium.ttf" id="3_616oa"]
 [ext_resource type="Texture2D" uid="uid://1xhdegm0y271" path="res://Assets/atlas/2 Background/2.png" id="4_r0nfg"]
 [ext_resource type="Texture2D" uid="uid://by335lknqbcax" path="res://Assets/atlas/2 Background/1.png" id="5_3xqsy"]
+[ext_resource type="AudioStream" uid="uid://bad6snbx1gnha" path="res://Assets/audio/sfx/button.wav" id="9_hkqhq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ktxv1"]
 bg_color = Color(0, 0, 0, 0.8352941)
@@ -108,6 +109,24 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Sair"
 
+[node name="Recorde" type="Label" parent="." unique_id=755519845]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -112.0
+offset_right = 20.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "Melhor tempo: nenhum ainda"
+horizontal_alignment = 1
+
 [node name="CredMenu" type="Control" parent="." unique_id=1507633683]
 visible = false
 z_index = 1
@@ -137,17 +156,17 @@ theme_override_colors/font_shadow_color = Color(0, 0.8352941, 1, 0)
 theme_override_fonts/font = ExtResource("3_616oa")
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_ktxv1")
-text = "Teste
+text = "Plataformer 2D
+DCC148 - Desenvolvimento de Jogos - UFJF
 
+Carlos Roberto S. - movimentacao e design de personageem
+Manuela Grimaldi  - obstaculos e level design
+João Victor Soares - lógica de pontuacao e telas
 
-
-
-
-
-
-
-
-"
+Arte: Craftpix (Side-Scroller Traps e Cyberpunk Characters)
+Sons: MoxieCat e Kenney (CC0)
+Musica: tricksntraps / glitchart (CC0)
+Engine: Godot 4.7"
 
 [node name="Return" type="Button" parent="CredMenu" unique_id=767140578]
 layout_mode = 1
@@ -208,7 +227,12 @@ position = Vector2(576, 320)
 scale = Vector2(2, 2)
 texture = ExtResource("5_3xqsy")
 
+[node name="SomClique" type="AudioStreamPlayer" parent="." unique_id=617900028]
+stream = ExtResource("9_hkqhq")
+bus = &"SFX"
+
 [connection signal="pressed" from="Botoes/Iniciar" to="." method="_on_iniciar_pressed"]
+[connection signal="pressed" from="Botoes/Config" to="." method="_on_config_pressed"]
 [connection signal="pressed" from="Botoes/Creditos" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="Botoes/Sair" to="." method="_on_sair_pressed"]
 [connection signal="pressed" from="CredMenu/Return" to="." method="_on_return_pressed"]

@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c136ytu2k7d0w"]
+
+[ext_resource type="AudioStream" uid="uid://sokl00l0n7ga" path="res://Assets/audio/music/Caves.ogg" id="1_rikf6"]
+
+[node name="Musica" type="AudioStreamPlayer" unique_id=1154749512]
+process_mode = 3
+stream = ExtResource("1_rikf6")
+autoplay = true
+bus = &"Music"

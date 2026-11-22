@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://cniyannn0qkls"]
+
+[ext_resource type="Theme" uid="uid://dk6fsi0ja5kay" path="res://Assets/themes/main_theme.tres" id="1_afscx"]
+[ext_resource type="Script" uid="uid://r5tv3sde8t00" path="res://Scripts/config.gd" id="2_c4nmp"]
+[ext_resource type="AudioStream" uid="uid://bad6snbx1gnha" path="res://Assets/audio/sfx/button.wav" id="3_mgomi"]
+
+[node name="Config" type="Control" unique_id=1526349555]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_afscx")
+script = ExtResource("2_c4nmp")
+
+[node name="Fundo" type="ColorRect" parent="." unique_id=1791441704]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.105882354, 0.13725491, 0.2509804, 0.9019608)
+
+[node name="Painel" type="VBoxContainer" parent="." unique_id=896348393]
+custom_minimum_size = Vector2(900, 410)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -205.0
+offset_right = 450.0
+offset_bottom = 205.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Titulo" type="Label" parent="Painel" unique_id=1550699582]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.8352941, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "CONFIGURACÕES"
+horizontal_alignment = 1
+
+[node name="Geral" type="HBoxContainer" parent="Painel" unique_id=706212411]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Painel/Geral" unique_id=774758635]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Volume geral"
+
+[node name="Slider" type="HSlider" parent="Painel/Geral" unique_id=1043756187]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Musica" type="HBoxContainer" parent="Painel" unique_id=1782946872]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Painel/Musica" unique_id=2140254732]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Volume da musica"
+
+[node name="Slider" type="HSlider" parent="Painel/Musica" unique_id=2040429171]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="Sfx" type="HBoxContainer" parent="Painel" unique_id=720459797]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Painel/Sfx" unique_id=394064699]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+text = "Volume dos efeitos sonoros"
+
+[node name="Slider" type="HSlider" parent="Painel/Sfx" unique_id=2000775136]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+max_value = 1.0
+step = 0.05
+
+[node name="TelaCheia" type="CheckButton" parent="Painel" unique_id=1309105128]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 24
+text = "Tela cheia"
+
+[node name="Recorde" type="Label" parent="Painel" unique_id=280643641]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="ApagarRecorde" type="Button" parent="Painel" unique_id=23533707]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Apagar recorde"
+
+[node name="Voltar" type="Button" parent="." unique_id=1756152071]
+process_mode = 3
+layout_mode = 1
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 79.0
+offset_bottom = 37.0
+text = "Voltar"
+
+[node name="SomTeste" type="AudioStreamPlayer" parent="." unique_id=720779800]
+stream = ExtResource("3_mgomi")
+bus = &"SFX"
+
+[connection signal="toggled" from="Painel/TelaCheia" to="." method="_on_tela_cheia_toggled"]
+[connection signal="pressed" from="Painel/ApagarRecorde" to="." method="_on_apagar_recorde_pressed"]
+[connection signal="pressed" from="Voltar" to="." method="_on_voltar_pressed"]
